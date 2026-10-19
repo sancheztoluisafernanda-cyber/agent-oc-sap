@@ -1,5 +1,9 @@
 import * as path from 'path';
 
+try {
+  process.loadEnvFile(); // Node >= 20.12; si no existe .env o la función, se usan las variables del entorno
+} catch {}
+
 export const FIXTURES_DIR = process.env.OC_FIXTURES_DIR ?? path.join(process.cwd(), 'fixtures', 'reto-03');
 export const OUT_ROOT = process.env.OC_OUT_DIR ?? path.join(process.cwd(), 'out');
 export const UI_DIR = path.join(process.cwd(), 'src', 'ui');
