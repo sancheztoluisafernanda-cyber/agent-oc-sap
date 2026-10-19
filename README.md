@@ -2,6 +2,8 @@
 
 Agente conversacional que lee un paquete de compra (correo, solicitud, cotización y aprobación del líder), lo valida contra los maestros y crea la orden de compra en un SAP simulado. Lo que no cumple control se bloquea; lo dudoso se devuelve a la analista para que confirme.
 
+**Demo en línea:** https://agente-oc-sap-8z8n.onrender.com/ (el plan gratuito se duerme sin tráfico; la primera visita puede tardar cerca de un minuto).
+
 El planteamiento, las decisiones de diseño, la IA usada y las limitaciones están en [SOLUCION.md](SOLUCION.md).
 
 ## Requisitos

@@ -17,6 +17,8 @@ Recibe el paquete de una compra (correo, solicitud, cotización, aprobación del
 
 ## 2. Cómo ejecutarlo
 
+**Enlace para probarlo:** https://agente-oc-sap-8z8n.onrender.com/
+
 ```bash
 npm install
 npm run demo         # 6 casos sin modelo; sale con código 1 si algún resultado difiere
