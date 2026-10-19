@@ -97,3 +97,7 @@ render.yaml        despliegue en Render
 ## Despliegue
 
 `render.yaml` deja listo el servicio en Render: en el panel, **New → Blueprint**, elige este repositorio y completa `ANTHROPIC_API_KEY`. En el plan gratuito el servicio se duerme sin tráfico y el disco se reinicia en cada redeploy, así que `out/` se vacía.
+
+## Documentación
+
+- [SOLUCION.md](SOLUCION.md): planteamiento de la solución, ciclo del agente, controles, decisiones, IA usada, limitaciones y diseño de integración con un SAP real.
