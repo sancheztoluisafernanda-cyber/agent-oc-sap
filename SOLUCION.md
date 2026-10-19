@@ -27,6 +27,8 @@ Variables (`.env.example`): `ANTHROPIC_API_KEY` (solo por entorno, nunca en el r
 
 Salidas en `out/`: `sap/ordenes.jsonl`, `control.csv` y, por caso, `<caso>/trazabilidad.json`, `<caso>/aprobacion.txt` y `<caso>/aprobacion.pdf`.
 
+**Despliegue (Render).** `render.yaml` define el servicio: build `npm install && npm run build`, start `npm start`, health check en `/health`. La clave `ANTHROPIC_API_KEY` se configura en el panel de Render, no en el repo. `/chat` limita las peticiones por IP (`CHAT_RATE_LIMIT`, 30 cada 10 minutos por defecto) para proteger el gasto de la clave, ya que el reto no incluye autenticación.
+
 ## 3. Ciclo del agente
 
 ```
@@ -102,6 +104,7 @@ Los datos que se completan desde el maestro (NIT, condiciones de pago, IVA propu
 - Los fixtures vienen ya convertidos a JSON y texto; no se lee `.xlsx` ni PDF binario.
 - La cotización con más de un ítem no se parsea directamente (cae al modelo; sin modelo, error).
 - No se compara el monto del texto del correo de aprobación ("25 millones") con la solicitud; solo se exige que haya aprobación explícita.
+- En el plan gratuito de Render el disco se reinicia en cada redeploy o al despertar el servicio: `out/` se vacía y los números de OC vuelven a 4500000001.
 - Instancia única: los archivos se escriben de forma síncrona y no hay control de concurrencia.
 - No se entrega el agente empaquetado como módulo (bonus) ni el enlace público: falta el despliegue.
 
